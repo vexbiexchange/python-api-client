@@ -109,3 +109,29 @@
 | ---- | ----------- |
 | 200 | Get your profile and accounts info. |
 
+## Vexbi.get_available_markets
+### /v2/markets
+##### ***GET***
+
+**Summary:** Get all available markets.
+
+**Description:** Get all available markets.
+
+**Responses**
+
+| Code | Description |
+| ---- | ----------- |
+| 200 | Get all available markets. |
+
+## Vexbi.tickers
+### /v2/tickers
+##### ***GET***
+
+**Summary:** Get ticker of all markets.
+**Description:** Get ticker of all markets.
+
+**Responses**
+
+| Code | Description |
+| ---- | ----------- |
+| 200 | Get ticker of all markets. |
