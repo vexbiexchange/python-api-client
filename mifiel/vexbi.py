@@ -17,6 +17,11 @@ class Vexbi(Base):
   def clear_all(self, data=None):
     self.post(data=data, url=self.url('orders/clear'))
 
+  def get_orders(self, market, query={}):
+    query = urllib.urlencode(query)
+    url = self.url('orders?market={}&{}'.format(market, query))
+    self.get(url=url)
+
   def get_account_info(self):
     self.get(url=self.url('members/me'))
 
