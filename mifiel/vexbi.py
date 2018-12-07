@@ -1,27 +1,18 @@
-from mifiel import Base, Response
-import mimetypes
+from mifiel import Base, Response, Client
+import mimetypes, urllib
 from os.path import basename
 import requests
 
 class Vexbi(Base):
-  def __init__(self, client):
+  def __init__(self, app_id, secret_key):
+    client = Client(app_id, secret_key)
     Base.__init__(self, client)
 
-  @staticmethod
-  def get_account_info(client):
-    vex = Vexbi(client)
-    vex.process_request('get', url=vex.url('members/me'))
-    return vex
+  def get_account_info(self):
+    self.get(url=self.url('members/me'))
 
-  @staticmethod
-  def get_available_markets(client):
-    vex = Vexbi(client)
-    vex.process_request('get', url=vex.url('markets'))
-    return vex
+  def get_available_markets(self):
+    self.get(url=self.url('markets'))
 
-  @staticmethod
-  def tickers(client):
-    vex = Vexbi(client)
-    vex.process_request('get', url=vex.url('tickers'))
-    return vex
-
+  def tickers(self):
+    self.get(url=self.url('tickers'))

@@ -6,39 +6,30 @@ class Base(object):
     object.__setattr__(self, 'sandbox', False)
     object.__setattr__(self, 'client', client)
     object.__setattr__(self, 'response', Response())
-    # initialize id
     self.id = None
-
-  def save(self):
-    if self.id is None:
-      return False
-    self.process_request('put', url=self.url(self.id), data=self.get_data())
 
   def url(self, path=None):
     return self.client.url().format(path=path)
 
-  def execute_request(self, method, url=None, data=None, json=None):
-    if not url:
-      url = self.url()
+  def post(self, url, data=None, json=None):
+    response = requests.post(
+      url=url,
+      auth=self.client.auth,
+      data=data,
+      json=json
+    )
+    self.set_data(response)
 
-    if method == 'post':
-      response = requests.post(
-        url=url,
-        auth=self.client.auth,
-        data=data,
-        json=json
-      )
-    elif method == 'put':
-      response = requests.put(url, auth=self.client.auth, json=data)
-    elif method == 'get':
-      response = requests.get(url, auth=self.client.auth, json=data)
-    elif method == 'delete':
-      response = requests.delete(url, auth=self.client.auth, json=data)
+  def put(self, url, data=None, json=None):
+    response = requests.put(url, auth=self.client.auth, json=data)
+    self.set_data(response)
 
-    return response
+  def get(self, url, data=None, json=None):
+    response = requests.get(url, auth=self.client.auth, json=data)
+    self.set_data(response)
 
-  def process_request(self, method, url=None, data=None, json=None):
-    response = self.execute_request(method, url, data, json)
+  def delete(self, url, data=None, json=None):
+    response = requests.delete(url, auth=self.client.auth, json=data)
     self.set_data(response)
 
   def set_data(self, response):
