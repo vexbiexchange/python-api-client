@@ -22,6 +22,9 @@ class Vexbi(Base):
     url = self.url('orders?market={}&{}'.format(market, query))
     self.get(url=url)
 
+  def get_order(self, order_id):
+    self.get(url=self.url('order?id={}'.format(order_id)))
+
   def get_account_info(self):
     self.get(url=self.url('members/me'))
 
