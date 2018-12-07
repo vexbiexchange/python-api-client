@@ -8,6 +8,9 @@ class Vexbi(Base):
     client = Client(app_id, secret_key)
     Base.__init__(self, client)
 
+  def create_order(self, order_data):
+    self.post(data=order_data, url=self.url('orders'))
+
   def get_account_info(self):
     self.get(url=self.url('members/me'))
 
