@@ -14,6 +14,9 @@ class Vexbi(Base):
   def delete_order(self, order_id):
     self.post(data={ 'id': order_id }, url=self.url('order/delete'))
 
+  def clear_all(self, data=None):
+    self.post(data=data, url=self.url('orders/clear'))
+
   def get_account_info(self):
     self.get(url=self.url('members/me'))
 
