@@ -1,9 +1,9 @@
-from mifiel import Base, Response, Client
+from vexbi import Base, Response, Client
 import mimetypes, urllib
 from os.path import basename
 import requests
 
-class Vexbi(Base):
+class API(Base):
   def __init__(self, app_id, secret_key):
     client = Client(app_id, secret_key)
     Base.__init__(self, client)

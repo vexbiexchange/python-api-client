@@ -4,7 +4,7 @@ class Client:
   def __init__(self, app_id, secret_key):
     self.sandbox = False
     self.auth = RequestsApiAuth(app_id, secret_key)
-    self.base_url = 'https://www.vexbi.com'
+    self.base_url = 'http://localhost:3000'
 
   def use_sandbox(self):
     self.sandbox = True

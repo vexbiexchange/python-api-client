@@ -1,4 +1,4 @@
-## Vexbi.create_order
+## #create_order
 ### /v2/orders
 ##### ***POST***
 
@@ -22,7 +22,7 @@
 | ---- | ----------- |
 | 201 | Create a Sell/Buy order. |
 
-## Vexbi.delete_order
+## #delete_order
 ### /v2/order/delete
 ##### ***POST***
 
@@ -41,7 +41,7 @@
 | ---- | ----------- |
 | 201 | Cancel an order. |
 
-## Vexbi.clear_all
+## #clear_all
 ### /v2/orders/clear
 ##### ***POST***
 
@@ -60,7 +60,7 @@
 | ---- | ----------- |
 | 201 | Cancel all my orders. |
 
-## Vexbi.get_orders
+## #get_orders
 ### /v2/orders
 ##### ***GET***
 
@@ -83,7 +83,7 @@
 | ---- | ----------- |
 | 200 | Get your orders, results is paginated. |
 
-## Vexbi.get_order
+## #get_order
 ### /v2/order
 ##### ***GET***
 
@@ -96,7 +96,7 @@
 | ---- | ---------- | ----------- | -------- | ---- |
 | id | query | Unique order id. | Yes | integer |
 
-## Vexbi.get_account_info
+## #get_account_info
 ### /v2/members/me
 ##### ***GET***
 
@@ -109,7 +109,7 @@
 | ---- | ----------- |
 | 200 | Get your profile and accounts info. |
 
-## Vexbi.get_available_markets
+## #get_available_markets
 ### /v2/markets
 ##### ***GET***
 
@@ -123,7 +123,7 @@
 | ---- | ----------- |
 | 200 | Get all available markets. |
 
-## Vexbi.tickers
+## #tickers
 ### /v2/tickers
 ##### ***GET***
 
