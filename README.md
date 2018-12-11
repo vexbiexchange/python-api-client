@@ -1,4 +1,23 @@
-## #create_order
+# vexbi-python-api-client
+
+Python library for [Vexbi](https://www.mifiel.com/) API. Please read our [documentation](#) for instructions on how to start using the API.
+
+## Requirements
+
+- Python 2.7.0+
+- Git 1.7.0+
+
+## Getting started
+
+### install dependencies:
+
+```
+pip install -r requirements.txt
+```
+
+## Usage
+
+### #create_order
 ### /v2/orders
 ##### ***POST***
 
@@ -14,7 +33,7 @@
 | side | formData | Either 'sell' or 'buy'. | Yes | string |
 | volume | formData | The amount user want to sell/buy. An order could be partially executed, e.g. an order sell 5 btc can be matched with a buy 3 btc order, left 2 btc to be sold; in this case the order's volume would be '5.0', its remaining_volume would be '2.0', its executed volume is '3.0'. | Yes | string |
 | price | formData | Price for each unit. e.g. If you want to sell/buy 1 btc at 3000 usd, the price is '3000.0' | No | string |
-| ord_type | formData |  | No | string |
+| ord_type | formData | The type of order, can be `market` or `limit`  | No (defaults to `limit` | string |
 
 **Responses**
 
@@ -22,7 +41,7 @@
 | ---- | ----------- |
 | 201 | Create a Sell/Buy order. |
 
-## #delete_order
+### #delete_order
 ### /v2/order/delete
 ##### ***POST***
 
@@ -41,7 +60,7 @@
 | ---- | ----------- |
 | 201 | Cancel an order. |
 
-## #clear_all
+### #clear_all
 ### /v2/orders/clear
 ##### ***POST***
 
@@ -60,7 +79,7 @@
 | ---- | ----------- |
 | 201 | Cancel all my orders. |
 
-## #get_orders
+### #get_orders
 ### /v2/orders
 ##### ***GET***
 
@@ -83,7 +102,7 @@
 | ---- | ----------- |
 | 200 | Get your orders, results is paginated. |
 
-## #get_order
+### #get_order
 ### /v2/order
 ##### ***GET***
 
@@ -96,7 +115,7 @@
 | ---- | ---------- | ----------- | -------- | ---- |
 | id | query | Unique order id. | Yes | integer |
 
-## #get_account_info
+### #get_account_info
 ### /v2/members/me
 ##### ***GET***
 
@@ -109,7 +128,7 @@
 | ---- | ----------- |
 | 200 | Get your profile and accounts info. |
 
-## #get_available_markets
+### #get_available_markets
 ### /v2/markets
 ##### ***GET***
 
@@ -123,7 +142,7 @@
 | ---- | ----------- |
 | 200 | Get all available markets. |
 
-## #tickers
+### #tickers
 ### /v2/tickers
 ##### ***GET***
 
