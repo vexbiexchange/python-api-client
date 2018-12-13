@@ -19,18 +19,22 @@ class Base(object):
       json=json
     )
     self.set_data(response)
+    return self.get_data()
 
   def put(self, url, data=None, json=None):
     response = requests.put(url, auth=self.client.auth, json=data)
     self.set_data(response)
+    return self.get_data()
 
   def get(self, url, data=None, json=None):
     response = requests.get(url, auth=self.client.auth, json=data)
     self.set_data(response)
+    return self.get_data()
 
   def delete(self, url, data=None, json=None):
     response = requests.delete(url, auth=self.client.auth, json=data)
     self.set_data(response)
+    return self.get_data()
 
   def set_data(self, response):
     self.response.set_response(response)
