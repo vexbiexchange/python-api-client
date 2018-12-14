@@ -33,3 +33,13 @@ class API(Base):
 
   def tickers(self):
     return self.get(url=self.url('tickers'))
+
+  def get_recent_trades(self, market, query={}):
+    query = urllib.urlencode(query)
+    url = self.url('trades?market={}&{}'.format(market, query))
+    return self.get(url=url)
+
+  def my_trades(self, market, query={}):
+    query = urllib.urlencode(query)
+    url = self.url('trades/my?market={}&{}'.format(market, query))
+    return self.get(url=url)

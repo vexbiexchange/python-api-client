@@ -154,3 +154,51 @@ pip install -r requirements.txt
 | Code | Description |
 | ---- | ----------- |
 | 200 | Get ticker of all markets. |
+
+### #get_recent_trades
+### /v2/trades
+##### ***GET***
+
+**Summary:** Get recent trades on market, each trade is included only once. Trades are sorted in reverse creation order.
+**Description:** Get recent trades on market, each trade is included only once. Trades are sorted in reverse creation order.
+
+**Parameters**
+
+| Name | Located in | Description | Required | Schema |
+| ---- | ---------- | ----------- | -------- | ---- |
+| market | query | Unique market id. It's always in the form of xxxyyy, where xxx is the base currency code, yyy is the quote currency code, e.g. 'btcusd'. All available markets can be found at /api/v2/markets. | Yes | string |
+| limit | query | Limit the number of returned trades. Default to 50. | No | integer |
+| timestamp | query | An integer represents the seconds elapsed since Unix epoch. If set, only trades executed before the time will be returned. | No | integer |
+| from | query | Trade id. If set, only trades created after the trade will be returned. | No | integer |
+| to | query | Trade id. If set, only trades created before the trade will be returned. | No | integer |
+| order_by | query | If set, returned trades will be sorted in specific order, default to 'desc'. | No | string |
+
+**Responses**
+
+| Code | Description |
+| ---- | ----------- |
+| 200 | Get recent trades on market, each trade is included only once. Trades are sorted in reverse creation order. |
+
+### #my_trades
+### /v2/trades/my
+##### ***GET***
+
+**Summary:** Get your executed trades. Trades are sorted in reverse creation order.
+**Description:** Get your executed trades. Trades are sorted in reverse creation order.
+
+**Parameters**
+
+| Name | Located in | Description | Required | Schema |
+| ---- | ---------- | ----------- | -------- | ---- |
+| market | query | Unique market id. It's always in the form of xxxyyy, where xxx is the base currency code, yyy is the quote currency code, e.g. 'btcusd'. All available markets can be found at /api/v2/markets. | Yes | string |
+| limit | query | Limit the number of returned trades. Default to 50. | No | integer |
+| timestamp | query | An integer represents the seconds elapsed since Unix epoch. If set, only trades executed before the time will be returned. | No | integer |
+| from | query | Trade id. If set, only trades created after the trade will be returned. | No | integer |
+| to | query | Trade id. If set, only trades created before the trade will be returned. | No | integer |
+| order_by | query | If set, returned trades will be sorted in specific order, default to 'desc'. | No | string |
+
+**Responses**
+
+| Code | Description |
+| ---- | ----------- |
+| 200 | Get your executed trades. Trades are sorted in reverse creation order. |
