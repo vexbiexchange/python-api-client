@@ -8,6 +8,9 @@ class API(Base):
     client = Client(app_id, secret_key)
     Base.__init__(self, client)
 
+  def use_sandbox(self):
+    self.client.use_sandbox()
+
   def create_order(self, order_data):
     return self.post(data=order_data, url=self.url('orders'))
 
