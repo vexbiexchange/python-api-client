@@ -1,5 +1,5 @@
 from vexbi import Base, Response, Client
-import mimetypes, urllib
+import mimetypes
 from os.path import basename
 import requests
 
@@ -18,9 +18,8 @@ class API(Base):
     return self.post(data=data, url=self.url('orders/clear'))
 
   def get_orders(self, market, query={}):
-    query = urllib.urlencode(query)
-    url = self.url('orders?market={}&{}'.format(market, query))
-    return self.get(url=url)
+    url = self.url('orders?market={}'.format(market))
+    return self.get(url=url, data=query)
 
   def get_order(self, order_id):
     return self.get(url=self.url('order?id={}'.format(order_id)))
@@ -35,11 +34,9 @@ class API(Base):
     return self.get(url=self.url('tickers'))
 
   def get_recent_trades(self, market, query={}):
-    query = urllib.urlencode(query)
-    url = self.url('trades?market={}&{}'.format(market, query))
-    return self.get(url=url)
+    url = self.url('trades?market={}'.format(market))
+    return self.get(url=url, data=query)
 
   def my_trades(self, market, query={}):
-    query = urllib.urlencode(query)
-    url = self.url('trades/my?market={}&{}'.format(market, query))
-    return self.get(url=url)
+    url = self.url('trades/my?market={}'.format(market))
+    return self.get(url=url, data=query)

@@ -27,11 +27,11 @@ class Base(object):
     return self.get_data()
 
   def get(self, url, data=None, json=None):
-    response = requests.get(url, auth=self.client.auth, json=data)
+    response = requests.get(url, auth=self.client.auth, params=data, json=json)
     self.set_data(response)
     return self.get_data()
 
-  def delete(self, url, data=None, json=None):
+  def delete(self, url, data=None):
     response = requests.delete(url, auth=self.client.auth, json=data)
     self.set_data(response)
     return self.get_data()
