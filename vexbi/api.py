@@ -36,7 +36,7 @@ class API(Base):
   def tickers(self):
     return self.get(url=self.url('tickers'))
 
-  def get_recent_trades(self, market, query={}):
+  def trades(self, market, query={}):
     url = self.url('trades?market={}'.format(market))
     return self.get(url=url, data=query)
 

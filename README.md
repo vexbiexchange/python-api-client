@@ -155,7 +155,7 @@ pip install -r requirements.txt
 | ---- | ----------- |
 | 200 | Get ticker of all markets. |
 
-### #get_recent_trades
+### #trades
 ### /v2/trades
 ##### ***GET***
 
