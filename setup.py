@@ -16,5 +16,8 @@ setuptools.setup(
   author_email='jaime@michelada.io',
   license='MIT',
   test_suite='nose2.collector.collector',
-  packages=setuptools.find_packages()
+  packages=setuptools.find_packages(),
+  install_requires=[
+    'requests'
+  ],
 )
