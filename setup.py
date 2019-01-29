@@ -6,7 +6,7 @@ except(IOError, ImportError):
   long_description = open('README.md').read()
 
 setuptools.setup(
-  name='vexbi-python-api-client',
+  name='vexbi',
   version='0.0.1',
   description='Python API Client library for Vexbi.com',
   long_description=long_description,
