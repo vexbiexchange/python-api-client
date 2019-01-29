@@ -1,6 +1,10 @@
-# vexbi-python-api-client
+# Vexbi Python Library
 
-Python library for [Vexbi](https://www.mifiel.com/) API. Please read our [documentation](#) for instructions on how to start using the API.
+[![Coverage Status][coveralls-image]][coveralls-url]
+[![Build Status][travis-image]][travis-url]
+[![PyPI version][pypi-image]][pypi-url]
+
+Python library for [Vexbi](https://www.vexbi.com/) API. Please read our [documentation](#) for instructions on how to start using the API.
 
 ## Requirements
 
@@ -202,3 +206,24 @@ pip install -r requirements.txt
 | Code | Description |
 | ---- | ----------- |
 | 200 | Get your executed trades. Trades are sorted in reverse creation order. |
+
+## Test
+
+Just clone the repo, install dependencies as you would in development and run `nose2` or `python setup.py test`
+
+## Contributing
+
+1. Fork it ( https://github.com/vexbiexchange/python-api-client/fork )
+2. Create your feature branch (`git checkout -b my-new-feature`)
+3. Commit your changes (`git commit -am 'Add some feature'`)
+4. Push to the branch (`git push origin my-new-feature`)
+5. Create a new Pull Request
+
+[coveralls-image]: https://coveralls.io/repos/github/vexbiexchange/python-api-client/badge.svg?branch=master
+[coveralls-url]: https://coveralls.io/github/vexbiexchange/python-api-client?branch=master
+
+[travis-image]: https://travis-ci.org/vexbiexchange/python-api-client.svg?branch=master
+[travis-url]: https://travis-ci.org/vexbiexchange/python-api-client
+
+[pypi-image]: https://badge.fury.io/py/vexbi.svg
+[pypi-url]: https://badge.fury.io/py/vexbi
