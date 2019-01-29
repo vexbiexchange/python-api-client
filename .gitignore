@@ -1,4 +1,13 @@
 *.pyc
-htmlcov
+/dist/
 /*.egg-info
+*.sublime-workspace
+env
+.Python
+.env
 .coverage
+htmlcov
+build
+README.txt
+tmp
+.eggs
