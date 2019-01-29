@@ -1,4 +1,4 @@
-# vexbi-python-api-client
+# Vexbi Python Library
 
 Python library for [Vexbi](https://www.mifiel.com/) API. Please read our [documentation](#) for instructions on how to start using the API.
 

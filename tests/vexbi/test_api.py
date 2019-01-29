@@ -1,10 +1,9 @@
-import pytest
 import responses
 from vexbi import API
 
 class TestAPI:
 
-  def setup(self):
+  def setUp(self):
     self.api = API('test_api', 'test_secret_key')
 
   def test_use_sandbox(self):
